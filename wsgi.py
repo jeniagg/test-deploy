@@ -47,9 +47,9 @@ class Todo(Resource):
 class TodoList(Resource):
     def get(self):
         client = MongoClient()
-        db_name = os.getenv("MONGODB_DATABASE")
+        db_name = "sampledb"
         db = client[db_name]
-        db.authenticate("admin", os.getenv("MONGODB_ADMIN_PASSWORD"))
+        db.authenticate("admin", "mongo")
         return str("")
         # return str(json.dumps({'results': list(result)}, default=json_util.default))
 
