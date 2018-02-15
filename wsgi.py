@@ -6,16 +6,16 @@ app = Flask(__name__)
 # api = Api(app)
 
 
-class HelloWorld:
-    @app.route('/', methods=['GET'])
-    def get():
-        data = {'bbb': 'aaa'}
-        return jsonify(data)
-    
-    @app.route('/task', methods=['GET'])
-    def getNew():
-        data = {'hesmllo': 'new'}
-        return jsonify(data)
+
+@app.route('/', methods=['GET'])
+def get():
+    data = {'bbb': 'aaa'}
+    return jsonify(data)
+   
+@app.route('/task', methods=['GET'])
+def getNew():
+    data = {'hesmllo': 'new'}
+    return jsonify(data)
 
 
 # api.add_resource(HelloWorld, '/')
