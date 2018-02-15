@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import jsonify
 # from flask_restful import Resource, Api
 
 app = Flask(__name__)
@@ -7,12 +8,15 @@ app = Flask(__name__)
 
 class HelloWorld:
     @app.route('/', methods=['GET'])
-    def get(self):
-        return {'new': 'sm'}
+    def get():
+        data = {'bbb': 'aaa'}
+        return jsonify(data)
     
-    @app.route('/s/smth', methods=['GET'])
-    def getNew(self):
-        return {'hesmllo': 'new'}
+    @app.route('/task', methods=['GET'])
+    def getNew():
+        data = {'hesmllo': 'new'}
+        return jsonify(data)
+
 
 # api.add_resource(HelloWorld, '/')
 
