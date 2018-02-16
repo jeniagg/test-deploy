@@ -46,7 +46,10 @@ class Todo(Resource):
 # shows a list of all todos, and lets you POST to add new tasks
 class TodoList(Resource):
     def get(self):
-        return str(os.getenv("MONGOLAB_CONN"))
+        client = MongoClient("mongodb://admin:!!E38kNM*LTu*%DYW74WTLM6Xyb@&+@ds237858.mlab.com:37858/shareddrive")
+        db = client.shareddrive
+        item_id = db.users.insert_one({"key": "value"}).inserted_id
+        return str(item_id)
         # return str(json.dumps({'results': list(result)}, default=json_util.default))
 
     def post(self):
